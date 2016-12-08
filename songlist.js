@@ -3,22 +3,21 @@ var current = 0;
 var allSongs = [];
 
 //Prototype for Song objects
-function Song(title,artist,album,year)
+function Song(song,artist,album,year)
 {
-  this.song = title;
+  this.song = song;
   this.artist = artist;
   this.album = album;
   this.year = year;
+
   this.toString = function(){
-    return this.title + " by " + this.artist;
+    return "Released on " + this.album + " in " + this.year + ", " + this.song 
+    + " by " + this.artist;
   }
-  this.releaseInfo = function(){
-    return "Released on " + this.album + " in " + this.year;
-  };
   this.listened = 0;
   this.play = function(){
     this.listened++;
-  };
+  }
 }
 
 //Adds new instances of songs to the list
